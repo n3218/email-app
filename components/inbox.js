@@ -1,24 +1,21 @@
 import React, { Component } from "react"
-import emails from "../MOCK_DATA.json"
 import EmailRow from "./email-row"
 
 export default class Inbox extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      emails: emails
-    }
-  }
-
   render() {
-    console.log(this.state.emails)
     return (
       <div>
         <h1>React Inbox Starter</h1>
-        <p>You have {this.state.emails.length} emails</p>
+        <p>You have {this.props.emails.length} emails</p>
         <div>
-          {this.state.emails.map(e => (
-            <EmailRow email={e} />
+          <button>select all</button>
+        </div>
+        <div>
+          <button>unselect all</button>
+        </div>
+        <div>
+          {this.props.emails.map(e => (
+            <EmailRow email={e} isRead={this.props.isRead} markAsRead={this.props.markAsRead} key={e.id} />
           ))}
         </div>
       </div>

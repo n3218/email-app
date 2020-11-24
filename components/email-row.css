@@ -25,7 +25,17 @@
 .email-body {
   width: 35%;
 }
-.isread {
+.email-row {
+  font-weight: bold;
+}
+.email-row.isread {
+  font-weight: normal;
   background-color: lightgray;
   color: gray;
+}
+a {
+  color: black;
+}
+.email-row.current-row {
+  border-left: 5px solid blue;
 }

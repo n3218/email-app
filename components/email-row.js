@@ -9,6 +9,9 @@ export default class EmailRow extends Component {
   getClassName() {
     let style = "email-row "
     this.props.isRead[this.props.email.id] ? (style += "isread") : null
+    if (this.props.currentRow) {
+      style += " current-row "
+    }
     return style
   }
   render() {

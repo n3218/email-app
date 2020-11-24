@@ -8,10 +8,10 @@ export default class Inbox extends Component {
         <h1>React Inbox Starter</h1>
         <p>You have {this.props.emails.length} emails</p>
         <div>
-          <button>select all</button>
+          <button onClick={this.props.markAllAsRead}>mark all as read</button>
         </div>
         <div>
-          <button>unselect all</button>
+          <button onClick={this.props.markAllAsUnread}>mark all as unread</button>
         </div>
         <div>
           {this.props.emails.map(e => (

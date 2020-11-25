@@ -14,9 +14,9 @@ export default class Inbox extends Component {
           <button onClick={this.props.markAllAsUnread}>mark all as unread</button>
         </div>
         <div>
-          {this.props.emails.map(e => (
-            <EmailRow email={e} isRead={this.props.isRead} markAsRead={this.props.markAsRead} key={e.id} />
-          ))}
+          {this.props.emails.map((e, i) => {
+            return <EmailRow email={e} isRead={this.props.isRead} markAsRead={this.props.markAsRead} key={e.id} isSelected={this.props.isSelected == i} />
+          })}
         </div>
       </div>
     )

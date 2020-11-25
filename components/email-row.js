@@ -8,9 +8,11 @@ export default class EmailRow extends Component {
   }
   getClassName() {
     let style = "email-row "
-    this.props.isRead[this.props.email.id] ? (style += "isread") : null
-    if (this.props.currentRow) {
-      style += " current-row "
+    if (this.props.isRead[this.props.email.id]) {
+      style += " isread "
+    }
+    if (this.props.isSelected) {
+      style += " isselected "
     }
     return style
   }
